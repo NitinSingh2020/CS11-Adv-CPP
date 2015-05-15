@@ -7,7 +7,7 @@
 /* Function Generator */
 int randomNumber() {return (std::rand()%100 + 1); }
 
-int main () {
+int main() {
     std::vector<int> values(100);
 
     std::generate(values.begin(), values.end(), randomNumber);
