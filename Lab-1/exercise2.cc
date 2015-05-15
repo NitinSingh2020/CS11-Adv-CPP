@@ -16,7 +16,7 @@ std::string randomAlphaString() {
     int wordLength = randomNumber();
 
     const std::string alphabets = "abcdefghijklmnopqrstuvwxyz";
-    std::string s (wordLength, 'x');
+    std::string s(wordLength, 'x');
 
     for (int i = 0; i < wordLength; ++i) {
         s[i] = alphabets[rand() % 26];
@@ -26,17 +26,17 @@ std::string randomAlphaString() {
     return s;
 }
 
-bool sortByStringLength (std::string a, std::string b) {
+bool sortByStringLength(std::string a, std::string b) {
     return (a.length() < b.length());
 }
 
-int main () {
+int main() {
     std::vector<std::string> values(100);
 
     std::generate(values.begin(), values.end(), randomAlphaString);
 
     /* Sort the vector lexically */
-    std::sort (values.begin(), values.end());
+    std::sort(values.begin(), values.end());
 
     /* Display the vector delimited by comma */
     std::copy(values.begin(), values.end(),
@@ -45,7 +45,7 @@ int main () {
     std::cout << "\n\n\n\n" << std::endl;
 
     /* Sort Vector by length */
-    std::sort (values.begin(), values.end(), sortByStringLength);
+    std::sort(values.begin(), values.end(), sortByStringLength);
 
     /* Display the vector delimited by comma */
     std::copy(values.begin(), values.end(),
