@@ -5,5 +5,7 @@ SOURCES=
 OBJECTS=
 EXECUTABLE=
 
+all: exercise1
+
 exercise1: exercise1.cc
-	$(CC) -Wall exercise1.cc -o exercise1
+	$(CC) $(CFLAGS) exercise1.cc -o exercise1
