@@ -5,7 +5,5 @@ SOURCES=
 OBJECTS=
 EXECUTABLE=
 
-all: exercise1
-
-exercise1:
-	g++ -Wall exercise1.cc -o exercise1
+exercise1: exercise1.cc
+	$(CC) -Wall exercise1.cc -o exercise1
