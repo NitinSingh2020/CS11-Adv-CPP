@@ -5,7 +5,10 @@
 #include <ext/functional>  // __gnu_cxx::compose1
 
 
-/*
+/* 
+ * 1) Function to remove the even elements from the array
+ * 2) Its broken because when printing it iterates to the end of the vector
+ * 3) While retrieving the altered vector iterate till the new_end iterator
  */
 int main() {
    std::vector<int> v;
@@ -24,6 +27,14 @@ int main() {
                      __gnu_cxx::compose1(bind2nd(std::equal_to<int>(), 0),
                               bind2nd(std::modulus<int>(), 2)));
 
+   /* Buggy Code */
    std::copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
+   std::cout << std::endl;
+
+   /* Intended Code */
+   for (std::vector<int>::iterator it = v.begin(); it != new_end; ++it) {
+      std::cout << *it;
+      std::cout << " ";
+   }
    std::cout << std::endl;
 }
