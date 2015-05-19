@@ -20,7 +20,7 @@ struct countEvenOdd : public std::unary_function<int, void> {
     void operator()(int x) {
         if (x % 2 == 0)
             evenCount++;
-        else 
+        else
             oddCount++;
     }
 };
