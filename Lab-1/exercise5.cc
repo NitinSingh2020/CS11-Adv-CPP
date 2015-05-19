@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>      // std::rand
+#include <algorithm>    // std::generate
 
 template <typename BidirectionalIterator>
 void my_reverse(BidirectionalIterator first, BidirectionalIterator last) {
@@ -22,4 +23,6 @@ void test(int size) {
     std::cout << "Size: " << size << std::endl;
 
     std::vector<int> v(size);
+
+    std::generate(v.begin(), v.end(), randomNumber);
 }
