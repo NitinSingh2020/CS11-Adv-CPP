@@ -1,12 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>      // std::rand
-#include <algorithm>    // std::generate
-#include <iterator>     // std::ostream_iterator
+#include <algorithm>    // std::generate; std::swap
+#include <iterator>     // std::ostream_iterator; std::distance
 
 template <typename BidirectionalIterator>
 void my_reverse(BidirectionalIterator first, BidirectionalIterator last) {
     // Your implementation here!
+    while ((first != last) && (first != --last)) {
+        std::iter_swap(first, last);
+        ++first;
+    }
 }
 
 /* Function Generator: Generates random integer in [1, 100] */
