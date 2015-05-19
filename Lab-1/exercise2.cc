@@ -25,7 +25,7 @@ std::string randomAlphaString() {
     s[wordLength] = 0;
     return s;
 }
-
+/* Comparator conforming to the Strict Weak Ordering model. */
 bool sortByStringLength(std::string a, std::string b) {
     return (a.length() < b.length());
 }
