@@ -41,7 +41,14 @@ exercise5: exercise5.o
 
 exercise5.o: exercise5.cc
 	$(CC) $(CFLAGS) exercise5.cc
+	python cpplint.py exercise5.cc
 
 # Clean up task
 clean:
 	rm *.o *.exe
+
+# Code styling
+style: exercise1.cc exercise2.cc exercise3.cc exercise4.cc exercise5.cc
+	python cpplint.py exercise1.cc exercise2.cc exercise3.cc exercise4.cc exercise5.cc
+
+.PHONY: style
