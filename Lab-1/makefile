@@ -5,7 +5,7 @@ SOURCES=
 OBJECTS=
 EXECUTABLE=
 
-all: exercise1 exercise2 exercise3 exercise4
+all: exercise1 exercise2 exercise3 exercise4 exercise5
 
 # Exercise 1
 exercise1: exercise1.o
@@ -34,6 +34,13 @@ exercise4: exercise4.o
 
 exercise4.o: exercise4.cc
 	$(CC) $(CFLAGS) exercise4.cc
+
+# Exercise 5
+exercise5: exercise5.o
+	$(CC) exercise5.o -o exercise5
+
+exercise5.o: exercise5.cc
+	$(CC) $(CFLAGS) exercise5.cc
 
 # Clean up task
 clean:
