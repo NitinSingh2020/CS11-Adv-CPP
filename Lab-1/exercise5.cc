@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstdlib>      // std::rand
 
 template <typename BidirectionalIterator>
 void my_reverse(BidirectionalIterator first, BidirectionalIterator last) {
@@ -18,5 +19,7 @@ int main() {
 
 /* Helper Function Definition */
 void test(int size) {
+    std::cout << "Size: " << size << std::endl;
 
+    std::vector<int> v(size);
 }
