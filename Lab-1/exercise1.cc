@@ -4,7 +4,8 @@
 #include <algorithm>    // std::generate
 #include <iterator>     // std::ostream_iterator
 
-/* Function Generator */
+/* Function Generator
+ * Generates random integer in [1, 100] */
 int randomNumber() {return (std::rand()%100 + 1); }
 
 int main() {
