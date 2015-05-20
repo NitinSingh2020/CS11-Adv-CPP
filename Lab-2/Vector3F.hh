@@ -39,9 +39,9 @@ public:
 
 /* Non Member Functions */
 /* Overloaded Operators */
-const Vector3F operator*(const Vector3F &v, float s) const;  // Multiplication
-const Vector3F operator*(float s, const Vector3F &v) const;  // Multiplication
-const Vector3F operator/(const Vector3F &v, float s) const;  // Division
-ostream & operator<<(ostream &os, const T &value);  // Stream-output operator
+const Vector3F operator*(const Vector3F &v, float s);  // Multiplication
+const Vector3F operator*(float s, const Vector3F &v);  // Multiplication
+const Vector3F operator/(const Vector3F &v, float s);  // Division
+std::ostream & operator<<(std::ostream &os, const Vector3F &v);  // Stream-output operator
 
 #endif /* __VECTOR3F_HH__ */
