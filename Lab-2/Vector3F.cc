@@ -57,3 +57,28 @@ Vector3F & Vector3F::operator-=(const Vector3F &v) {
     }
     return *this;
 }
+
+/* Sum Operator */
+const Vector3F Vector3F::operator+(const Vector3F &v) const {
+    return Vector3F(*this) += v;
+}
+
+/* Subtraction Operator */
+const Vector3F Vector3F::operator-(const Vector3F &v) const {
+    return Vector3F(*this) -= v;
+}
+
+/* Equality Operator */
+bool Vector3F::operator==(const Vector3F &other) const {
+    if ( this->elems[0] == other.elems[0] &&
+    	 this->elems[1] == other.elems[1] &&
+    	 this->elems[2] == other.elems[2] )
+    	return true;
+    else
+    	return false;
+}
+
+/* Non-equality Operator */
+bool Vector3F::operator!=(const Vector3F &v) const {
+    return !(*this == v);
+}
