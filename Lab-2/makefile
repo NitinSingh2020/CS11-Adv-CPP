@@ -21,4 +21,8 @@ clean:
 style: Vector3F.cc test_Vector3F.cc
 	python cpplint.py Vector3F.cc test_Vector3F.cc
 
-.PHONY: style
+# Unit Testing
+test: test_Vector3F.exe
+	./test_Vector3F.exe
+
+.PHONY: style test
