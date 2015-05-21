@@ -18,7 +18,6 @@ Vector3F::Vector3F(float x, float y, float z) {
 
 /* Assignment Operator */
 Vector3F & Vector3F::operator=(const Vector3F &v) {
-
     // Avoid self-assignment
     if (this != &v)
         return *this;
@@ -71,11 +70,11 @@ const Vector3F Vector3F::operator-(const Vector3F &v) const {
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
-    	 this->elems[1] == other.elems[1] &&
-    	 this->elems[2] == other.elems[2] )
-    	return true;
+        this->elems[1] == other.elems[1] &&
+        this->elems[2] == other.elems[2] )
+        return true;
     else
-    	return false;
+        return false;
 }
 
 /* Non-equality Operator */
