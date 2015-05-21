@@ -60,6 +60,16 @@ TEST(TestVector3F, Compound_Diff_false) {
     ASSERT_FLOAT_EQ(m == o, false) << "Compound_Diff failed";
 }
 
+TEST(TestVector3F, Sum_true) {
+    Vector3F o = Vector3F (1.0, 2.0, 3.0) + Vector3F (11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(o == Vector3F (12.0, 25.0, 35.0), true) << "Sum failed";
+}
+
+TEST(TestVector3F, Sum_false) {
+    Vector3F o = Vector3F (1.0, 2.0, 3.0) + Vector3F (11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(o == Vector3F (1.0, 25.0, 35.0), false) << "Sum failed";
+}
+
 TEST(TestVector3F, FeatureTwo) {
     // Code to exercise the feature
 }
