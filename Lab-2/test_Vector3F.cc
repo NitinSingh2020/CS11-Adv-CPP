@@ -28,8 +28,20 @@ TEST(TestVector3F, Non_Equality_false) {
     ASSERT_FLOAT_EQ(m != n, false) << "Vector Non-Equality Oerator Failed!";
 }
 
-TEST(TestVector3F, FeatureOne) {
-    // Code to exercise the feature
+TEST(TestVector3F, Compound_Sum_true) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n(11.0, 23.0, 32.0);
+    Vector3F o(12.0, 25.0, 35.0);
+    m += n;
+    ASSERT_FLOAT_EQ(m == o, true) << "Compound_Sum failed";
+}
+
+TEST(TestVector3F, Compound_Sum_false) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n(11.0, 23.0, 32.0);
+    Vector3F o(11.0, 25.0, 35.0);
+    m += n;
+    ASSERT_FLOAT_EQ(m == o, false) << "Compound_Sum failed";
 }
 
 TEST(TestVector3F, FeatureTwo) {
