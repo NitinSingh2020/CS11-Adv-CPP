@@ -44,6 +44,22 @@ TEST(TestVector3F, Compound_Sum_false) {
     ASSERT_FLOAT_EQ(m == o, false) << "Compound_Sum failed";
 }
 
+TEST(TestVector3F, Compound_Diff_true) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n(11.0, 23.0, 32.0);
+    Vector3F o(-10.0, -21.0, -29.0);
+    m -= n;
+    ASSERT_FLOAT_EQ(m == o, true) << "Compound_Diff failed";
+}
+
+TEST(TestVector3F, Compound_Diff_false) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n(11.0, 23.0, 32.0);
+    Vector3F o(-10.0, -21.0, 35.0);
+    m -= n;
+    ASSERT_FLOAT_EQ(m == o, false) << "Compound_Diff failed";
+}
+
 TEST(TestVector3F, FeatureTwo) {
     // Code to exercise the feature
 }
