@@ -24,26 +24,28 @@ TEST(TestVector3F, Compound_Sum) {
     Vector3F m(1.0, 2.0, 3.0);
     Vector3F n(11.0, 23.0, 32.0);
     Vector3F o(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ((m += n) == Vector3F(12.0, 25.0, 35.0), true) << "Compound_Sum failed";
-    ASSERT_FLOAT_EQ((m += o) == Vector3F(11.0, 25.0, 35.0), false) << "Compound_Sum failed";
+    ASSERT_FLOAT_EQ((m += n) == Vector3F(12.0, 25.0, 35.0), true)
+        << "Compound_Sum failed";
+    ASSERT_FLOAT_EQ((m += o) == Vector3F(11.0, 25.0, 35.0), false)
+        << "Compound_Sum failed";
 }
 
 TEST(TestVector3F, Compound_Diff) {
     Vector3F m(1.0, 2.0, 3.0);
     Vector3F n(11.0, 23.0, 32.0);
     Vector3F o(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ((m -= n) == Vector3F(-10.0, -21.0, -29.0), true) << "Compound_Diff failed";
-    ASSERT_FLOAT_EQ((m -= o) == Vector3F(-10.0, -21.0, 35.0), false) << "Compound_Diff failed";
+    ASSERT_FLOAT_EQ((m -= n) == Vector3F(-10.0, -21.0, -29.0), true)
+        << "Compound_Diff failed";
+    ASSERT_FLOAT_EQ((m -= o) == Vector3F(-10.0, -21.0, 35.0), false)
+        << "Compound_Diff failed";
 }
 
-TEST(TestVector3F, Sum_true) {
-    Vector3F o = Vector3F(1.0, 2.0, 3.0) + Vector3F(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ(o == Vector3F(12.0, 25.0, 35.0), true) << "Sum failed";
-}
+TEST(TestVector3F, Sum) {
+    Vector3F m = Vector3F(1.0, 2.0, 3.0) + Vector3F(11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(m == Vector3F(12.0, 25.0, 35.0), true) << "Sum failed";
 
-TEST(TestVector3F, Sum_false) {
-    Vector3F o = Vector3F(1.0, 2.0, 3.0) + Vector3F(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ(o == Vector3F(1.0, 25.0, 35.0), false) << "Sum failed";
+    Vector3F n = Vector3F(1.0, 2.0, 3.0) + Vector3F(11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(n == Vector3F(1.0, 25.0, 35.0), false) << "Sum failed";
 }
 
 TEST(TestVector3F, Diff_true) {
