@@ -101,8 +101,22 @@ TEST(TestVector3F, Unary_minus) {
     ASSERT_FLOAT_EQ(m == -(-m), true) << "Unary Minus failed";
 }
 
+TEST(TestVector3F, Vector_Accessor) {
+    Vector3F m(3.5, 7.0, 10.5); 
+    ASSERT_FLOAT_EQ(m[0] == 3.5, true) << "Vector Accessor failed";
+    ASSERT_FLOAT_EQ(m[1] == 7.0, true) << "Vector Accessor failed";
+    ASSERT_FLOAT_EQ(m[2] == 10.5, true) << "Vector Accessor failed";
+}
+
+TEST(TestVector3F, Vector_Mutator) {
+    Vector3F m(3.5, 7.0, 10.5);
+    m[0] = 1.0;
+    m[1] = 2.0;
+    m[2] = 3.0;
+    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 2.0, 3.0), true) << "Vector Accessor failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
