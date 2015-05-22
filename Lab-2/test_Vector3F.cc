@@ -92,7 +92,26 @@ TEST(TestVector3F, Compound_Div_false) {
     ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.5, 2.0, 3.0), false) << "Compound Division failed";
 }
 
+TEST(TestVector3F, Multiply_scalarRight) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n = m * 3.5;
+    ASSERT_FLOAT_EQ(n == Vector3F(3.5, 7.0, 10.5), true) << "Multiply failed";
+}
+
+TEST(TestVector3F, Multiply_scalarLeft) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n = 3.5 * m;
+    ASSERT_FLOAT_EQ(n == Vector3F(3.5, 7.0, 10.5), true) << "Multiply failed";
+}
+
+TEST(TestVector3F, Div_scalar) {
+    Vector3F m(3.5, 7.0, 10.5);
+    Vector3F n = m / 3.5;
+    ASSERT_FLOAT_EQ(n == Vector3F(1.0, 2.0, 3.0), true) << "Division failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
+
