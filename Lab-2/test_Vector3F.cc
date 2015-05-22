@@ -72,8 +72,24 @@ TEST(TestVector3F, Diff_false) {
     ASSERT_FLOAT_EQ(o == Vector3F(-1.0, -21.0, -29.0), false) << "Diff failed";
 }
 
-TEST(TestVector3F, FeatureTwo) {
-    // Code to exercise the feature
+TEST(TestVector3F, Compound_Multiply_true) {
+    Vector3F m(1.0, 2.0, 3.0);
+    ASSERT_FLOAT_EQ((m*=3.5) == Vector3F(3.5, 7.0, 10.5), true) << "Compound Multiply failed";
+}
+
+TEST(TestVector3F, Compound_Multiply_false) {
+    Vector3F m(1.0, 2.0, 3.0);
+    ASSERT_FLOAT_EQ((m*=3.5) == Vector3F(3.0, 7.0, 10.5), false) << "Compound Multiply failed";
+}
+
+TEST(TestVector3F, Compound_Div_true) {
+    Vector3F m(3.5, 7.0, 10.5);
+    ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.0, 2.0, 3.0), true) << "Compound Division failed";
+}
+
+TEST(TestVector3F, Compound_Div_false) {
+    Vector3F m(3.5, 7.0, 10.5);
+    ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.5, 2.0, 3.0), false) << "Compound Division failed";
 }
 
 int main(int argc, char **argv) {
