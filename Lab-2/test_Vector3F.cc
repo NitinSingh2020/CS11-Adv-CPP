@@ -56,24 +56,24 @@ TEST(TestVector3F, Diff) {
     ASSERT_FLOAT_EQ(n == Vector3F(-1.0, -21.0, -29.0), false) << "Diff failed";
 }
 
-TEST(TestVector3F, Compound_Multiply_true) {
+TEST(TestVector3F, Compound_Multiply) {
     Vector3F m(1.0, 2.0, 3.0);
-    ASSERT_FLOAT_EQ((m*=3.5) == Vector3F(3.5, 7.0, 10.5), true) << "Compound Multiply failed";
+    ASSERT_FLOAT_EQ((m*=3.5) == Vector3F(3.5, 7.0, 10.5), true)
+        << "Compound Multiply failed";
+
+    Vector3F n(1.0, 2.0, 3.0);
+    ASSERT_FLOAT_EQ((n*=3.5) == Vector3F(3.0, 7.0, 10.5), false)
+        << "Compound Multiply failed";
 }
 
-TEST(TestVector3F, Compound_Multiply_false) {
-    Vector3F m(1.0, 2.0, 3.0);
-    ASSERT_FLOAT_EQ((m*=3.5) == Vector3F(3.0, 7.0, 10.5), false) << "Compound Multiply failed";
-}
-
-TEST(TestVector3F, Compound_Div_true) {
+TEST(TestVector3F, Compound_Div) {
     Vector3F m(3.5, 7.0, 10.5);
-    ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.0, 2.0, 3.0), true) << "Compound Division failed";
-}
+    ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.0, 2.0, 3.0), true)
+        << "Compound Division failed";
 
-TEST(TestVector3F, Compound_Div_false) {
-    Vector3F m(3.5, 7.0, 10.5);
-    ASSERT_FLOAT_EQ((m/=3.5) == Vector3F(1.5, 2.0, 3.0), false) << "Compound Division failed";
+    Vector3F n(3.5, 7.0, 10.5);
+    ASSERT_FLOAT_EQ((n/=3.5) == Vector3F(1.5, 2.0, 3.0), false)
+        << "Compound Division failed";
 }
 
 TEST(TestVector3F, Multiply_scalarRight) {
