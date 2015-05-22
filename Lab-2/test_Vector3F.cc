@@ -122,6 +122,13 @@ TEST(TestVector3F, Dot_Product) {
     ASSERT_FLOAT_EQ(m * n == 44.0, true) << "Dot product failed";
 }
 
+TEST(TestVector3F, Cross_Product) {
+    Vector3F m(1.0, 2.0, 3.0);
+    Vector3F n(4.0, 5.0, 6.0);
+    ASSERT_FLOAT_EQ(m % n == Vector3F(-3.0, 6.0, -3.0), true)
+        << "Cross product failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

@@ -123,6 +123,14 @@ const float Vector3F::operator*(const Vector3F &v) const {
     return elems[0] * v[0] + elems[1] * v[1] + elems[2] * v[2];
 }
 
+/* Cross Product */
+const Vector3F Vector3F::operator%(const Vector3F &v) const {
+    float x = (elems[1] * v[2]) - (elems[2] * v[1]);
+    float y = (elems[2] * v[0]) - (elems[0] * v[2]);
+    float z = (elems[0] * v[1]) - (elems[1] * v[0]);
+    return Vector3F(x, y, z);
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
@@ -137,3 +145,28 @@ bool Vector3F::operator==(const Vector3F &other) const {
 bool Vector3F::operator!=(const Vector3F &v) const {
     return !(*this == v);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
