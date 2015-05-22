@@ -135,6 +135,12 @@ TEST(TestVector3F, L2_Norm) {
         << "L2 norm (magnitude) failed";
 }
 
+TEST(TestVector3F, Magnitude_Square) {
+    Vector3F m(0.0, 3.0, 4.0);
+    ASSERT_FLOAT_EQ(m.magnitude_square() == 25.0, true)
+        << "Magnitude (square) failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

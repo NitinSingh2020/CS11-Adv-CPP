@@ -137,6 +137,11 @@ const float Vector3F::L2_norm() const {
     return sqrtf(elems[0] * elems[0] + elems[1] * elems[1] + elems[2] * elems[2]);
 }
 
+/* Square of Magnitude */
+const float Vector3F::magnitude_square() const {
+    return (elems[0] * elems[0] + elems[1] * elems[1] + elems[2] * elems[2]);
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&

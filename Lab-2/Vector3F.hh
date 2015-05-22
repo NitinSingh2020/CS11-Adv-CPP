@@ -14,6 +14,7 @@ public:
     
 
     const float L2_norm() const;                        // Magnitude of vector
+    const float magnitude_square() const;               // Square of Magnitude
     void normalize();                                   // Normalization
 
     /* Overloaded Operators */
