@@ -104,6 +104,13 @@ const Vector3F Vector3F::operator-() const {
     return Vector3F(*this) *= -1;
 }
 
+/* First Version; Accessor */
+float Vector3F::operator[](int i) const {
+    assert(i > -1);
+    assert(i < 3);
+    return elems[i];
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
