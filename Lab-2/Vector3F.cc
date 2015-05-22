@@ -106,8 +106,15 @@ const Vector3F Vector3F::operator-() const {
 
 /* First Version; Accessor */
 float Vector3F::operator[](int i) const {
-    assert(i > -1);
-    assert(i < 3);
+    assert(i >= 0);
+    assert(i <= 2);
+    return elems[i];
+}
+
+/* Second Version; Mutator */
+float & Vector3F::operator[](int i) {
+    assert(i >= 0);
+    assert(i <= 2);
     return elems[i];
 }
 
