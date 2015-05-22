@@ -99,6 +99,11 @@ const Vector3F operator/(const Vector3F &v, float s) {
     return Vector3F(v) /= s;
 }
 
+/* Unary Minus */
+const Vector3F Vector3F::operator-() const {
+    return Vector3F(*this) *= -1;
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
