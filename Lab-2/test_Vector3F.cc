@@ -28,7 +28,7 @@ TEST(TestVector3F, Compound_Sum) {
     ASSERT_FLOAT_EQ((m += o) == Vector3F(11.0, 25.0, 35.0), false) << "Compound_Sum failed";
 }
 
-TEST(TestVector3F, Compound_Diff_true) {
+TEST(TestVector3F, Compound_Diff) {
     Vector3F m(1.0, 2.0, 3.0);
     Vector3F n(11.0, 23.0, 32.0);
     Vector3F o(11.0, 23.0, 32.0);
