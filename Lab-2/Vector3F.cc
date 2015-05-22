@@ -84,6 +84,21 @@ Vector3F & Vector3F::operator/=(float s) {
     return *this;
 }
 
+/* Multiplication */
+const Vector3F operator*(const Vector3F &v, float s) {
+    return Vector3F(v) *= s;
+}
+
+/* Multiplication */
+const Vector3F operator*(float s, const Vector3F &v) {
+    return Vector3F(v) *= s;
+}
+
+/* Division */
+const Vector3F operator/(const Vector3F &v, float s) {
+    return Vector3F(v) /= s;
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
