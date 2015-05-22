@@ -68,7 +68,7 @@ const Vector3F Vector3F::operator-(const Vector3F &v) const {
 }
 
 /* Compound Multiplication Operator */
-Vector3F & operator*=(float s) {
+Vector3F & Vector3F::operator*=(float s) {
     this->elems[0] = this->elems[0] * s;
     this->elems[1] = this->elems[1] * s;
     this->elems[2] = this->elems[2] * s;
@@ -76,7 +76,7 @@ Vector3F & operator*=(float s) {
 }
 
 /* Compound Division Operator */
-Vector3F & operator/=(float s) {
+Vector3F & Vector3F::operator/=(float s) {
     assert(s != 0);
     this->elems[0] = this->elems[0] / s;
     this->elems[1] = this->elems[1] / s;
