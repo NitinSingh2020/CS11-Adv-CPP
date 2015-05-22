@@ -152,6 +152,12 @@ void Vector3F::normalize() {
     }
 }
 
+/* Stream-output operator */
+std::ostream & operator<<(std::ostream &os, const Vector3F &v) {
+    os << "(" << v[0] << ", " << v[1] << ", " << v[2] << ")";
+    return os;
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&
@@ -166,28 +172,3 @@ bool Vector3F::operator==(const Vector3F &other) const {
 bool Vector3F::operator!=(const Vector3F &v) const {
     return !(*this == v);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

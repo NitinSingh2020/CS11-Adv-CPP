@@ -1,5 +1,6 @@
 #ifndef __VECTOR3F_HH__
 #define __VECTOR3F_HH__
+#include <iostream>
 
 class Vector3F {
     float elems[3];
@@ -43,6 +44,6 @@ public:
 const Vector3F operator*(const Vector3F &v, float s);  // Multiplication
 const Vector3F operator*(float s, const Vector3F &v);  // Multiplication
 const Vector3F operator/(const Vector3F &v, float s);  // Division
-//std::ostream & operator<<(std::ostream &os, const Vector3F &v);  // Stream-output operator
+std::ostream & operator<<(std::ostream &os, const Vector3F &v);  // Stream-output operator
 
 #endif /* __VECTOR3F_HH__ */
