@@ -48,14 +48,12 @@ TEST(TestVector3F, Sum) {
     ASSERT_FLOAT_EQ(n == Vector3F(1.0, 25.0, 35.0), false) << "Sum failed";
 }
 
-TEST(TestVector3F, Diff_true) {
-    Vector3F o = Vector3F(1.0, 2.0, 3.0) - Vector3F(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ(o == Vector3F(-10.0, -21.0, -29.0), true) << "Diff failed";
-}
+TEST(TestVector3F, Diff) {
+    Vector3F m = Vector3F(1.0, 2.0, 3.0) - Vector3F(11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(m == Vector3F(-10.0, -21.0, -29.0), true) << "Diff failed";
 
-TEST(TestVector3F, Diff_false) {
-    Vector3F o = Vector3F(1.0, 2.0, 3.0) - Vector3F(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ(o == Vector3F(-1.0, -21.0, -29.0), false) << "Diff failed";
+    Vector3F n = Vector3F(1.0, 2.0, 3.0) - Vector3F(11.0, 23.0, 32.0);
+    ASSERT_FLOAT_EQ(n == Vector3F(-1.0, -21.0, -29.0), false) << "Diff failed";
 }
 
 TEST(TestVector3F, Compound_Multiply_true) {
