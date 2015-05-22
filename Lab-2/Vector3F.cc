@@ -118,6 +118,11 @@ float & Vector3F::operator[](int i) {
     return elems[i];
 }
 
+/* Dot Product */
+const float Vector3F::operator*(const Vector3F &v) const {
+    return elems[0] * v[0] + elems[1] * v[1] + elems[2] * v[2];
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&

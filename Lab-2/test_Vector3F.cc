@@ -113,7 +113,13 @@ TEST(TestVector3F, Vector_Mutator) {
     m[0] = 1.0;
     m[1] = 2.0;
     m[2] = 3.0;
-    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 2.0, 3.0), true) << "Vector Accessor failed";
+    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 2.0, 3.0), true) << "Vector Mutator failed";
+}
+
+TEST(TestVector3F, Dot_Product) {
+    Vector3F m(1.0, 3.0, 5.0);
+    Vector3F n(2.0, 4.0, 6.0);
+    ASSERT_FLOAT_EQ(m * n == 44.0, true) << "Dot product failed";
 }
 
 int main(int argc, char **argv) {
