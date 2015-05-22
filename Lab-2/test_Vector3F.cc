@@ -110,6 +110,13 @@ TEST(TestVector3F, Div_scalar) {
     ASSERT_FLOAT_EQ(n == Vector3F(1.0, 2.0, 3.0), true) << "Division failed";
 }
 
+TEST(TestVector3F, Unary_minus) {
+    Vector3F m(3.5, 7.0, 10.5);
+    Vector3F n = -m;
+    ASSERT_FLOAT_EQ(n == Vector3F(-3.5, -7.0, -10.5), true) << "Unary Minus failed";
+    ASSERT_FLOAT_EQ(m == -(-m), true) << "Unary Minus failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
