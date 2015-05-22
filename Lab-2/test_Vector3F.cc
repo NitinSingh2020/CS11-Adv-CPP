@@ -20,16 +20,12 @@ TEST(TestVector3F, Non_Equality) {
     ASSERT_FLOAT_EQ(m != o, false) << "Vector Non-Equality Oerator Failed!";
 }
 
-TEST(TestVector3F, Compound_Sum_true) {
+TEST(TestVector3F, Compound_Sum) {
     Vector3F m(1.0, 2.0, 3.0);
     Vector3F n(11.0, 23.0, 32.0);
+    Vector3F o(11.0, 23.0, 32.0);
     ASSERT_FLOAT_EQ((m += n) == Vector3F(12.0, 25.0, 35.0), true) << "Compound_Sum failed";
-}
-
-TEST(TestVector3F, Compound_Sum_false) {
-    Vector3F m(1.0, 2.0, 3.0);
-    Vector3F n(11.0, 23.0, 32.0);
-    ASSERT_FLOAT_EQ((m += n) == Vector3F(11.0, 25.0, 35.0), false) << "Compound_Sum failed";
+    ASSERT_FLOAT_EQ((m += o) == Vector3F(11.0, 25.0, 35.0), false) << "Compound_Sum failed";
 }
 
 TEST(TestVector3F, Compound_Diff_true) {
