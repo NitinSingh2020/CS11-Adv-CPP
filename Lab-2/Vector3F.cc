@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cassert>
+#include <cmath>
 #include "Vector3F.hh"
 
 /* Default (aka no-argument) constructor */
@@ -129,6 +130,11 @@ const Vector3F Vector3F::operator%(const Vector3F &v) const {
     float y = (elems[2] * v[0]) - (elems[0] * v[2]);
     float z = (elems[0] * v[1]) - (elems[1] * v[0]);
     return Vector3F(x, y, z);
+}
+
+/* Magnitude of vector */
+const float Vector3F::L2_norm() const {
+    return sqrtf(elems[0] * elems[0] + elems[1] * elems[1] + elems[2] * elems[2]);
 }
 
 /* Equality Operator */

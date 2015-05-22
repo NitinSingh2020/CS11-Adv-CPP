@@ -13,7 +13,7 @@ public:
     /* No Mutator method */
     
 
-    const float L2_norm(const Vector3F &v) const;       // Magnitude of vector
+    const float L2_norm() const;                        // Magnitude of vector
     void normalize();                                   // Normalization
 
     /* Overloaded Operators */

@@ -129,6 +129,12 @@ TEST(TestVector3F, Cross_Product) {
         << "Cross product failed";
 }
 
+TEST(TestVector3F, L2_Norm) {
+    Vector3F m(0.0, 3.0, 4.0);
+    ASSERT_FLOAT_EQ(m.L2_norm() == 5.0, true)
+        << "L2 norm (magnitude) failed";
+}
+
 int main(int argc, char **argv) {
     InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
