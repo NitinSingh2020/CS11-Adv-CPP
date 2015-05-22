@@ -142,6 +142,16 @@ const float Vector3F::magnitude_square() const {
     return (elems[0] * elems[0] + elems[1] * elems[1] + elems[2] * elems[2]);
 }
 
+/* Normalization */
+void Vector3F::normalize() {
+    if (this->magnitude_square() != 0.0) {
+        float magnitude = this->L2_norm();
+        elems[0] /= magnitude;
+        elems[1] /= magnitude;
+        elems[2] /= magnitude;
+    }
+}
+
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
     if ( this->elems[0] == other.elems[0] &&

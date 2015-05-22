@@ -97,7 +97,8 @@ TEST(TestVector3F, Div_scalar) {
 TEST(TestVector3F, Unary_minus) {
     Vector3F m(3.5, 7.0, 10.5);
     Vector3F n = -m;
-    ASSERT_FLOAT_EQ(n == Vector3F(-3.5, -7.0, -10.5), true) << "Unary Minus failed";
+    ASSERT_FLOAT_EQ(n == Vector3F(-3.5, -7.0, -10.5), true)
+        << "Unary Minus failed";
     ASSERT_FLOAT_EQ(m == -(-m), true) << "Unary Minus failed";
 }
 
@@ -113,7 +114,8 @@ TEST(TestVector3F, Vector_Mutator) {
     m[0] = 1.0;
     m[1] = 2.0;
     m[2] = 3.0;
-    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 2.0, 3.0), true) << "Vector Mutator failed";
+    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 2.0, 3.0), true)
+        << "Vector Mutator failed";
 }
 
 TEST(TestVector3F, Dot_Product) {
@@ -139,6 +141,13 @@ TEST(TestVector3F, Magnitude_Square) {
     Vector3F m(0.0, 3.0, 4.0);
     ASSERT_FLOAT_EQ(m.magnitude_square() == 25.0, true)
         << "Magnitude (square) failed";
+}
+
+TEST(TestVector3F, Normalization) {
+    Vector3F m(9.0, 0.0, 0.0);
+    m.normalize();
+    ASSERT_FLOAT_EQ(m == Vector3F(1.0, 0.0, 0.0), true)
+        << "Normalization failed";
 }
 
 int main(int argc, char **argv) {
