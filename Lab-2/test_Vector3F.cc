@@ -103,7 +103,7 @@ TEST(TestVector3F, Unary_minus) {
 }
 
 TEST(TestVector3F, Vector_Accessor) {
-    Vector3F m(3.5, 7.0, 10.5); 
+    Vector3F m(3.5, 7.0, 10.5);
     ASSERT_FLOAT_EQ(m[0] == 3.5, true) << "Vector Accessor failed";
     ASSERT_FLOAT_EQ(m[1] == 7.0, true) << "Vector Accessor failed";
     ASSERT_FLOAT_EQ(m[2] == 10.5, true) << "Vector Accessor failed";
