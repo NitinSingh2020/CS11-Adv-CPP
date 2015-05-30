@@ -160,7 +160,7 @@ std::ostream & operator<<(std::ostream &os, const Vector3F &v) {
 
 /* Equality Operator */
 bool Vector3F::operator==(const Vector3F &other) const {
-    if ( this->elems[0] == other.elems[0] &&
+    if (this->elems[0] == other.elems[0] &&
         this->elems[1] == other.elems[1] &&
         this->elems[2] == other.elems[2] )
         return true;
